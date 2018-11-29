@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>Document</title>
+  <style>
+	ul,li{margin:0;padding:0;list-style:none}
+	.slide_nv{}
+	.slide_btn{width:10px;height:10px;background-color:#ccc}
+	.slide_list{width:100px;height:150px;background-color:#ccc}
+	.mySlides{width:50px;height:50px;margin:0 auto;border:1px solid #000}
+  </style>
+ </head>
+ <body>
+	<div class="slide_nv">
+		<span class="slide_btn prev" onclick="plusSlides(-1)"> < </span>
+		<span class="slide_btn next" onclick="plusSlides(1)"> > </span>
+	</div>
+	<ul class="slide_list">
+		<li class="mySlides fade">1</li>
+		<li class="mySlides fade">2</li>
+		<li class="mySlides fade">3</li>
+	</ul>
+
+<script>
+var slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1}    
+  if (n < 1) {slideIndex = slides.length} ;
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";  
+  }
+  slides[slideIndex-1].style.display = "block";  
+}
+</script>
+
+
+
+ </body>
+</html>
